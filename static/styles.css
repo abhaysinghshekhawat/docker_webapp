@@ -1,44 +1,138 @@
 body{
     margin: 0;
-}
-.navbar{
-    background-color: turquoise;
-    display: flex;
-    justify-content: flex-end;
+     background-image: url('https://i.pinimg.com/originals/af/8d/63/af8d63a477078732b79ff9d9fc60873f.jpg');
     
+    background-attachment: fixed;
+    
+   
 }
-.nav-link{
-    color: black;
-    margin: 5px;
-}
-.button-area{
-    background-color: burlywood;
+
+.grid{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
     display: none;
 }
-.btn-icon{
-    height: 50px;
-    width: 50px;
-    background-color: burlywood;
-    border-radius: 8px;
-    border: 2px white solid;
+#sidebar{
+    background-color: black;
+    height: 800px;
+    color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
-.bars{
-    width: 80%;
-    height: 3px;
-    background-color: black;
+
+.nav-link{
+    margin: 10px 0;
+    font-size: 30px;
 }
-@media (max-width: 600px){
-    .navbar{
-        display: none;
-    }
-    .button-area{
-        display: flex;
-        background-color: burlywood;
-        justify-content: flex-end;
-    }
+.nav-link:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.content{
+    background-color: darkkhaki;
+    
+}
+#navbar{
+    width: 100%;
+    background-color: coral;
+    display: none;
+    height: 40px;
+    color: white;
+    justify-content: flex-start;
+    position: fixed;
+}
+
+#navbar p:hover{
+    background-color: white;
+    color: coral;
+    cursor: pointer;
+}
+
+.nav p {
+    margin: 16px;
+}
+
+/* card styling */
+#card-cnt{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
 }
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    margin: 5%;
+    
+    
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  
+}
+.flip-card h2 {
+    color: white;
+    margin-top: 30px;
+}
+.dropdown{
+    display: none;
+    flex-direction: column;
+}
+#images:hover {
+    background-color: lightskyblue;
+    color: white;
+    
+    cursor: pointer;
+}
+
+.drop-links:hover {
+    background-color: lightskyblue;
+    color: white;
+    display: inline;
+    cursor: pointer;
+}
+
+
+
+  /* car styling done */
