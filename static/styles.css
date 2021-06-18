@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+.navbar{
+    background-color: turquoise;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.nav-link{
+    color: black;
+    margin: 5px;
+}
+.button-area{
+    background-color: burlywood;
+    display: none;
+}
+.btn-icon{
+    height: 50px;
+    width: 50px;
+    background-color: burlywood;
+    border-radius: 8px;
+    border: 2px white solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.bars{
+    width: 80%;
+    height: 3px;
+    background-color: black;
+}
+@media (max-width: 600px){
+    .navbar{
+        display: none;
+    }
+    .button-area{
+        display: flex;
+        background-color: burlywood;
+        justify-content: flex-end;
+    }
+
+}
