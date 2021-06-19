@@ -8,7 +8,7 @@ app = Flask("myapp")
 
 @app.route('/')
 def home():
-    return render_template("form.html")
+    return render_template("test.html")
 
 @app.route('/checkDocker', methods=['GET'])
 def checkDocker():
