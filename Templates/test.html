@@ -11,8 +11,26 @@
 </head>
 <body>
 
-<!-- FIRST CARD -->
+
 <div id="card-cnt">
+  <!-- zeroth card -->
+  <div class="flip-card"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front" style="background-color: #F8A488;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsM6SFXL6ZStR6sXPUQ0Cjbg_i4Ih4IvzbQ&usqp=CAU" alt="" style="width: 100%; height: 50%;">
+        <H2>START DOCKER SERVICE</H2>
+      </div>
+      <div class="flip-card-back">
+        <button type="button" class="btn btn-primary btn-lg btn-success" style="margin-top: 90px;" onclick="startDocker()">START</button>
+        
+      </div>
+    </div>
+  </div>
+  <!-- zeroth card end -->
+  
+
+
+  <!-- first card -->
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front" style="background-color: #F8A488;">
@@ -44,18 +62,23 @@
          <h2>START CONTAINER</h2>
       </div>
       <div class="flip-card-back">
-        <h3  id="images" style="display: inline-block;">Images <img  onclick="drop()" src="https://seekicon.com/free-icon-download/arrow-dropdown_2.svg" alt="" style="height: 30px; width: 30px;"></h3>
+        <div id="fo-cnt">
+          <div id="fo-in" style="margin-left: 80px; margin-top: 20px;">
+           <input class="form-control" id="in" type="text" placeholder="image_name"  > 
+          </div>
+          <div style="margin-top: 20px; margin-right: 60px;"><span><img  onclick="drop()" src="https://seekicon.com/free-icon-download/arrow-dropdown_2.svg" alt="" style="height: 30px; width: 30px;"></span></div>
+        </div>
+
         <div class="dropdown"   id="drop">
-          <div class="drop-links" onclick="out()"  ><h5>centos</h5></div>
-          <div class="drop-links" onclick="out()" ><h5>ubuntu</h5></div>
+          <div class="drop-links"  onclick="out()" ><h5 id="link-centos" onclick="document.getElementById('in').value = this.innerHTML" >centos</h5></div>
+          <div class="drop-links" onclick="out()" ><h5 onclick="document.getElementById('in').value = this.innerHTML">ubuntu</h5></div>
         </div>
-        <div class="row" > 
-         <div class="col-6" style="margin-left: 80px; margin-top: 20px;">
-          <input  class="form-control" id="image_name" placeholder="image_name" style="text-align: center;"> 
-         </div>
-        </div>
+
+        <input class="form-control" id="tag" type="text" placeholder="Tag_name" style="width: 60%; margin: 20px auto;"> 
+        <input class="form-control" id="cnt-name" type="text" placeholder="Container_Name" style="width: 60%; margin:  auto;">
+        
         <div>
-        <button type="button" class="btn btn-primary btn-success" style="margin-top: 60px;" onclick="lw2()">LAUNCH</button>
+        <button type="button" class="btn btn-primary btn-success"  style="margin-top: 6px; " onclick="lw2()">LAUNCH</button>
         </div>
       </div>
     </div>
@@ -110,25 +133,10 @@
       </div>
     </div>
   </div>
-  <!-- FIFTH CARD END -->
-
-  <!-- SIXTH CARD   -->
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front" style="background-color: teal;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsM6SFXL6ZStR6sXPUQ0Cjbg_i4Ih4IvzbQ&usqp=CAU" alt="" style="width: 100%; height: 50%;">
-        <H2>STOP CONTAINER</H2>
-      </div>
-      <div class="flip-card-back">
-        <h1>John Doe</h1>
-        <p>Architect & Engineer</p>
-        <p>We love that guy</p>
-      </div>
-    </div>
-  </div>
 </div>
-<!-- SIXTH CARD END -->
+<!-- FIFTH CARD END -->
 
+  
 
   <div id="navbar">
     <div class="nav"><p onclick="home()">HOME</p></div>

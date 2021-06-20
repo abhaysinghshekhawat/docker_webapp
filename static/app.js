@@ -45,6 +45,9 @@ function checkDocker() {
 }
 
 function startDocker() {
+
+    document.getElementById("card-cnt").style.display = "none";
+    document.getElementById("navbar").style.display = "flex";
     var xhr = new XMLHttpRequest();
     xhr.open("GET", `/startDocker`, true);
     xhr.send();
