@@ -6,10 +6,13 @@ import subprocess as sp
 
 app = Flask("myapp")
 
+# home page
 @app.route('/')
 def home():
     return render_template("test.html")
 
+
+# Docker features...
 @app.route('/checkDocker', methods=['GET'])
 def checkDocker():
     return sp.getoutput("systemctl status docker")
