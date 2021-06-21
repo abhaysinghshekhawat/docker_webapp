@@ -6,40 +6,45 @@ import subprocess as sp
 
 app = Flask("myapp")
 
-# home page
 @app.route('/')
 def home():
-    return render_template("test.html")
+    return render_template("home.html")
 
-
-# Docker features...
-@app.route('/checkDocker', methods=['GET'])
+@app.route('/checkDocker', methods=['GET'])  
 def checkDocker():
-    return sp.getoutput("systemctl status docker")
+    op = sp.getoutput("systemctl status docker")
+    return "<pre> {} </pre>".format(op)
+
 
 @app.route('/startDocker', methods=['GET'])
 def startDocker():
-    return sp.getoutput("systemctl start docker")
+    op = sp.getoutput("systemctl start docker")
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/stopDocker', methods=['GET'])
 def stopDocker():
-    return sp.getoutput("systemctl stop docker")
+    op = sp.getoutput("systemctl stop docker")
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/dockerInfo', methods=['GET'])
 def dockerInfo():
-    return sp.getoutput("docker info")
+    op =sp.getoutput("docker info")
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/listContainer', methods=['GET'])
 def listContainer():
-    return sp.getoutput("docker ps")
+    op =  sp.getoutput("docker ps")
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/listAllContainer', methods=['GET'])
 def listAllContainer():
-    return sp.getoutput('docker ps -a')
+    op =  sp.getoutput('docker ps -a')
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/listImages', methods=['GET'])
 def listImages():
-    return sp.getoutput("docker images")
+    op = sp.getoutput("docker images")
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/runDocker', methods=['GET'])
 def runDocker():
@@ -47,21 +52,25 @@ def runDocker():
     imageName = (request.args.get('imageName'))
     tagName = (request.args.get('tagName'))
     cmd = "docker run -dit --name={} {}:{}".format(containerName, imageName, tagName)
-    return sp.getoutput(cmd)
+    op = sp.getoutput(cmd)
+    return "<pre> {} </pre>".format(op)
+
 
 @app.route('/startContainer', methods=['GET'])
 def startContainer():
     containerName = (request.args.get('containerName'))
     # containerId = (request.args.get('containerId'))
     cmd = "docker start {}".format(containerName)
-    return sp.getoutput(cmd)
+    op =  sp.getoutput(cmd)
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/stopContainer',  methods=['GET'])
 def stopContainer():
     containerName = (request.args.get('containerName'))
     # containerId = (request.args.get('containerId'))
     cmd = "docker stop {}".format(containerName)
-    return sp.getoutput(cmd)
+    op = sp.getoutput(cmd)
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/execDocker', methods=['GET'])
 def execDocker():
@@ -69,26 +78,33 @@ def execDocker():
     # containerId = (request.args.get('containerId'))
     cmdName = (request.args.get('cmdName'))
     cmd = "docker exec -dit {} {}".format(containerName, cmdName)
-    return sp.getoutput(cmd)  
+    op = sp.getoutput(cmd)  
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/pullImage', methods=['GET'])
 def pullImage():
     imageName = (request.args.get('imageName'))
     tagName = (request.args.get('tagName'))
     cmd = "docker pull {}:{}".format(imageName, tagName)
-    return sp.getoutput(cmd)
+    op = sp.getoutput(cmd)
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/removeImage', methods=['GET'])
 def removeImage():
     imageId = (request.args.get('imageId'))
     cmd = "docker rmi -f {}".format(imageId)
-    return sp.getoutput(cmd)
+    op = sp.getoutput(cmd)
+    return "<pre> {} </pre>".format(op)
 
 @app.route('/removeContainer', methods=['GET'])
 def removeContainer():
     containerName = (request.args.get('containerName'))
     # containerId = (request.args.get('containerId'))
     cmd = "docker rm -f {}".format(containerName)
-    return sp.getoutput(cmd)
+    op = sp.getoutput(cmd)
+    return "<pre> {} </pre>".format(op)
+
+
+
 
 app.run(host='0.0.0.0', port=5000, debug=True)
