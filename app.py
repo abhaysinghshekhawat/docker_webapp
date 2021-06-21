@@ -77,7 +77,7 @@ def execDocker():
     containerName = (request.args.get('containerName'))
     # containerId = (request.args.get('containerId'))
     cmdName = (request.args.get('cmdName'))
-    cmd = "docker exec -it {} {}".format(containerName, cmdName)
+    cmd = "docker exec  {} {}".format(containerName, cmdName)
     op = sp.getoutput(cmd)
     return "<pre> {} </pre>".format(op)
 
