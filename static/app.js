@@ -37,7 +37,7 @@ function checkDocker() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -50,7 +50,7 @@ function startDocker() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -63,7 +63,7 @@ function stopDocker() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -76,7 +76,7 @@ function dockerInfo() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -89,7 +89,7 @@ function listContainer() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -102,7 +102,7 @@ function listAllContainer() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -115,7 +115,7 @@ function listImages() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -132,7 +132,7 @@ function runDocker() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -147,7 +147,7 @@ function startContainer() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
   
@@ -162,7 +162,7 @@ function stopContainer() {
       xhr.send();
       xhr.onload = function() {
       var output = xhr.responseText;
-      document.getElementById("cnt-div").innerHTML = output;
+      document.getElementById("content").innerHTML = output;
       }
   }
 
@@ -177,7 +177,7 @@ function removeContainer() {
     xhr.send();
     xhr.onload = function() {
     var output = xhr.responseText;
-    document.getElementById("cnt-div").innerHTML = output;
+    document.getElementById("content").innerHTML = output;
     }
 }
 
@@ -195,7 +195,7 @@ function execDocker()
   xhr.send();
   xhr.onload = function() {
   var output = xhr.responseText;
-  document.getElementById("cnt-div").innerHTML = output;
+  document.getElementById("content").innerHTML = output;
   }
 
 }
