@@ -10,7 +10,7 @@ app = Flask("myapp")
 def home():
     return render_template("test.html")
 
-@app.route('/checkDocker', methods=['GET'])  
+@app.route('/checkDocker', methods=['GET'])
 def checkDocker():
     op = sp.getoutput("systemctl status docker")
     return "<pre> {} </pre>".format(op)
@@ -77,8 +77,8 @@ def execDocker():
     containerName = (request.args.get('containerName'))
     # containerId = (request.args.get('containerId'))
     cmdName = (request.args.get('cmdName'))
-    cmd = "docker exec -dit {} {}".format(containerName, cmdName)
-    op = sp.getoutput(cmd)  
+    cmd = "docker exec -it {} {}".format(containerName, cmdName)
+    op = sp.getoutput(cmd)
     return "<pre> {} </pre>".format(op)
 
 @app.route('/pullImage', methods=['GET'])
