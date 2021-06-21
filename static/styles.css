@@ -31,13 +31,10 @@ body{
     color: black;
     cursor: pointer;
 }
-.content{
-    background-color: darkkhaki;
-    
-}
+
 #navbar{
     width: 100%;
-    background-color: coral;
+    background-color: teal;
     display: none;
     height: 40px;
     color: white;
@@ -135,6 +132,9 @@ body{
 #fo-cnt{
     display: flex;
 }
+
+
+
 
 
 
