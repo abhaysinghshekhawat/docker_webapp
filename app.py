@@ -19,12 +19,12 @@ def checkDocker():
 @app.route('/startDocker', methods=['GET'])
 def startDocker():
     op = sp.getoutput("systemctl start docker")
-    return "<pre> {} </pre>".format(op)
+    return "<pre> <h2>DOCKER SERVICES STARTED...</h2> </pre>".format(op)
 
 @app.route('/stopDocker', methods=['GET'])
 def stopDocker():
     op = sp.getoutput("systemctl stop docker")
-    return "<pre> {} </pre>".format(op)
+    return "<pre> Container {} Stopped</pre>".format(op)
 
 @app.route('/dockerInfo', methods=['GET'])
 def dockerInfo():
@@ -53,7 +53,7 @@ def runDocker():
     tagName = (request.args.get('tagName'))
     cmd = "docker run -dit --name={} {}:{}".format(containerName, imageName, tagName)
     op = sp.getoutput(cmd)
-    return "<pre> {} </pre>".format(op)
+    return "<pre> CONTAINER STARTED WITH ID-> {} </pre>".format(op)
 
 
 @app.route('/startContainer', methods=['GET'])
@@ -62,7 +62,7 @@ def startContainer():
     # containerId = (request.args.get('containerId'))
     cmd = "docker start {}".format(containerName)
     op =  sp.getoutput(cmd)
-    return "<pre> {} </pre>".format(op)
+    return "<pre>Container <b>{}</b> Started..  </pre>".format(op)
 
 @app.route('/stopContainer',  methods=['GET'])
 def stopContainer():
