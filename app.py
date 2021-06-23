@@ -24,7 +24,7 @@ def startDocker():
 @app.route('/stopDocker', methods=['GET'])
 def stopDocker():
     op = sp.getoutput("systemctl stop docker")
-    return "<pre> Container {} Stopped</pre>".format(op)
+    return "<pre> <h2>DOCKER SERVICES STOPPED..</h2> </pre>".format(op)
 
 @app.route('/dockerInfo', methods=['GET'])
 def dockerInfo():
@@ -70,7 +70,7 @@ def stopContainer():
     # containerId = (request.args.get('containerId'))
     cmd = "docker stop {}".format(containerName)
     op = sp.getoutput(cmd)
-    return "<pre> {} </pre>".format(op)
+    return "<pre>Container {} Stopped... </pre>".format(op)
 
 @app.route('/execDocker', methods=['GET'])
 def execDocker():
@@ -102,7 +102,7 @@ def removeContainer():
     # containerId = (request.args.get('containerId'))
     cmd = "docker rm -f {}".format(containerName)
     op = sp.getoutput(cmd)
-    return "<pre> {} </pre>".format(op)
+    return "<pre>Container {} removed </pre>".format(op)
 
 
 
