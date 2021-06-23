@@ -29,7 +29,7 @@ def stopDocker():
 @app.route('/dockerInfo', methods=['GET'])
 def dockerInfo():
     op =sp.getoutput("docker info")
-    return "<pre> {} </pre>".format(op)
+    return "<pre> <p style="font-weight: bold; font-size: medium;">{}</p> </pre>".format(op)
 
 @app.route('/listContainer', methods=['GET'])
 def listContainer():
